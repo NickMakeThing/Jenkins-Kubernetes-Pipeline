@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <header>
+            <div id="nav-container"><!--make into link to home page-->
+                <img id="icon" src="{% static 'thinking.svg' %}" />
+                <div>
+                     Nicks Cool Blog
+                </div>
+            </div>
+        </header>
+        <div id="detail-container">
+            <div id="writing">
+                <h1>{{ object.title }}</h1>
+                <h4>date lol 12/34/56</h4>
+                <div>
+                    {{ object.body }}
+                </div>
+            </div>
+            <div id="image-container">
+                {% for image in images %}
+                <img src="{% static image.image %}" class="images" >
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+    <style>
+        body{
+            margin:0px;
+        }
+        header {
+            background-color:black;
+            display:flex;
+            justify-content: center; /*flex start to center makes the left distance between list box and window's edge uneven with the right*/
+            align-items: center;
+            color:white;
+            width:100%;
+            height:50px; /*75 with bigger letters and icon?*/
+            margin-bottom:50px; /*75*/
+        }
+        #nav-container {
+            display:flex;
+            justify-content: flex-start;
+            align-items: center;
+            /* width:calc(162*5px); */
+        }
+        #icon{
+            /* margin-left:10px; */
+            margin-right:5px;
+            width:30px
+        }
+        #detail-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom:50px; /*75*/
+            
+        }
+        #writing {
+            /*add max and min width*/
+            display: inline-block;
+            padding:25px;
+            padding-top:0;
+            width:600px; /*can put posts in an extra container and center that instead of doing width of post*number*/
+            /* background-color:rgb(228, 196, 18); */
+            margin-bottom:21px;
+        }
+        #image-container{
+            /* width:600px; */
+            display:flex;
+            justify-content: center;
+            flex-wrap:wrap;
+            gap:21px;
+        }
+        .images {
+            max-height:270px;
+            display: inline-block;
+            background-color: blueviolet;
+            border-radius:3%;
+        }
+    </style>
+    <script>
+        // list = document.getElementById('list')
+        // for(let i = 0; i<21; i++){
+        //     post = document.createElement('div')
+        //     post.className = "posts"
+        //     list.appendChild(post)
+        // }
+    </script>
+</html>

@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <header>
+            <div id="nav-container"> <!--make into link to home page-->
+                <img id="icon" src="{% static 'thinking.svg' %}" />
+                <div>
+                     Nicks Cool Blog
+                </div>
+            </div>
+        </header>
+        <div id="post-container">
+            <form action="./" method="POST" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <div class="form-row">
+                    Title: <input name="title" type="text"></input>
+                </div>
+                <div class="form-row">
+                    Text:<textarea name="body"></textarea>
+                </div>
+                <div class="form-row">
+                    Thumbnail:<input name='thumbnail' type="file">
+                </div>
+                <div class="form-row">
+                    Image(s):<input type="file" name="images" multiple>
+                </div>
+                <div class="form-row">
+                    Password:<input type="password" name="password">
+                </div>
+                <div class="form-row">
+                    <button type="submit">Post</input>
+                </div>
+            </form>
+        </div>
+    </body>
+    <style>
+        body{
+            margin:0px;
+        }
+        header {
+            background-color:black;
+            display:flex;
+            justify-content: center; /*flex start to center makes the left distance between list box and window's edge uneven with the right*/
+            align-items: center;
+            color:white;
+            width:100%;
+            height:50px; /*75 with bigger letters and icon?*/
+            margin-bottom:50px; /*75*/
+        }
+        #nav-container {
+            display:flex;
+            justify-content: flex-start;
+            align-items: center;
+            /* width:calc(162*5px); */
+        }
+        #icon{
+            /* margin-left:10px; */
+            margin-right:5px;
+            width:30px
+        }
+        #post-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom:50px; /*75*/
+            
+        }
+        .images {
+            margin:21px;
+            width: 120px; 
+            height: 120px;
+            display: inline-block;
+            background-color: blueviolet;
+        } 
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content:space-evenly;
+            gap:10px;
+        }
+        .form-row {
+            display: flex;
+            justify-content:flex-start;
+        }
+        textarea {
+            min-width:500px;
+            min-height:201px;
+        }
+    </style>
+    <script>
+        // list = document.getElementById('list')
+        // for(let i = 0; i<21; i++){
+        //     post = document.createElement('div')
+        //     post.className = "posts"
+        //     list.appendChild(post)
+        // }
+    </script>
+</html>
