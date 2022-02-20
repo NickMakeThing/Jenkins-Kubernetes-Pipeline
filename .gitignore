@@ -1,8 +1,8 @@
 *.pyc
 *.sqlite3
-*.png
-*.gif
-*.jpg
-*.jpeg
 blogposting*
 nicksblog/static/admin/
+nicksblog/*/*.png
+nicksblog/*/*.gif
+nicksblog/*/*.jpg
+nicksblog/*/*.jpeg
