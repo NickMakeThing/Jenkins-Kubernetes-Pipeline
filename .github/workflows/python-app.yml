@@ -25,6 +25,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install django
         pip install pytest
+        pip install pytest-django
     - name: Test with pytest
       working-directory: ./nicksblog
       env:
