@@ -26,5 +26,8 @@ jobs:
         pip install django
         pip install pytest
     - name: Test with pytest
+      env:
+        DJANGOKEY: 'test_key'
+        BLOGPASSWORD: 'test_password'
       run: |
         pytest nicksblog/
