@@ -15,17 +15,17 @@ def setup_module(module):
     os.environ['DJANGOKEY'] = 'test_key'
 
 def teardown_module(module):
-    for file in os.listdir('nicksblog/media/'):
+    for file in os.listdir('media/'):
         if file[:9] == 'testimage':
-            os.remove('nicksblog/media/'+file)
+            os.remove('media/'+file)
 
 def check_image(image_entry, image_name):
     return str(image_entry)[:10] == image_name and str(image_entry)[-4:] == '.jpg'
 
 def make_blogpost(factory, password="test_password", title="test_title"):
-    thumbnail = open('nicksblog/blog_app/tests/testimage1.jpg','rb')
-    body_image1 = open('nicksblog/blog_app/tests/testimage2.jpg','rb')
-    body_image2 = open('nicksblog/blog_app/tests/testimage3.jpg','rb')
+    thumbnail = open('blog_app/tests/testimage1.jpg','rb')
+    body_image1 = open('blog_app/tests/testimage2.jpg','rb')
+    body_image2 = open('blog_app/tests/testimage3.jpg','rb')
     post_data = {
         "title":title,
         "body":"test_body",
@@ -57,7 +57,7 @@ def test_createpost():
     assert check_image(last_image.image,'testimage3')
     images = [post.thumbnail, first_image.image, last_image.image]
     for image in images:
-        assert str(image) in os.listdir('nicksblog/media/')
+        assert str(image) in os.listdir('media/')
 
     #testing incorrect password
     response = make_blogpost(rf, password='wrong_password')
