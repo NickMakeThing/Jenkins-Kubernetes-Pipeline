@@ -21,7 +21,6 @@ class ViewPost(DetailView):
         context['images'] = images
         return context
 
-#createview. needs some kind of authentication thing
 class CreatePost(CreateView):
     model = BlogPost
     fields = ['title','body','thumbnail']
@@ -48,4 +47,5 @@ class CreatePost(CreateView):
         password = bytes(password+'saltlol','utf-8')
         hash = sha256(password).hexdigest()
         return hash == os.getenv('BLOGPASSWORD')
-        
+
+#added this note to test pull requests
