@@ -2,4 +2,4 @@ django
 pytest
 pytest-django
 pillow
-
+gunicorn
