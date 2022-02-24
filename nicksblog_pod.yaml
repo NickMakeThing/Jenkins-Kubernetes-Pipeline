@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: nicksblog-pod
+  labels:
+    app: nicksblog
+
+spec:
+  containers:
+    - name: nicksblog-container
+      image: nicksegal/devops-nicksblog:latest
+      ports: 
+        - name: gunicorn
+          containerPort: 8000
+          protocol: TCP

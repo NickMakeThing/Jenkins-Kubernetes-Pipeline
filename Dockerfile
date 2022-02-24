@@ -4,11 +4,8 @@ WORKDIR .
 
 ARG BUILD_DEPS="build-base gcc libffi-dev"
 
-ARG DJANGOKEY
-ARG BLOGPASSWORD
-
-ENV DJANGOKEY = $DJANGOKEY
-ENV BLOGPASSWORD = $BLOGPASSWORD
+ENV DJANGOKEY = fake-key
+ENV BLOGPASSWORD = fake-password
 
 COPY requirements.txt .
 
