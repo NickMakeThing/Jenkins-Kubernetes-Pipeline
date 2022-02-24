@@ -14,3 +14,14 @@ spec:
         - name: gunicorn
           containerPort: 8000
           protocol: TCP
+      env:
+        - name: BLOGPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: blogpassword
+              key: BLOGPASSWORD
+        - name: DJANGOKEY
+          valueFrom:
+            secretKeyRef:
+              name: djangokey
+              key: DJANGOKEY
