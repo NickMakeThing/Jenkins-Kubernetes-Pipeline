@@ -25,3 +25,13 @@ spec:
             secretKeyRef:
               name: djangokey
               key: DJANGOKEY
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: aws-access-key-id
+              key: AWS_ACCESS_KEY_ID
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: aws-secret-access-key
+              key: AWS_SECRET_ACCESS_KEY

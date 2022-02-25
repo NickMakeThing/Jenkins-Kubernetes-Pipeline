@@ -3,3 +3,5 @@ pytest
 pytest-django
 pillow
 gunicorn
+boto3
+django-storages
