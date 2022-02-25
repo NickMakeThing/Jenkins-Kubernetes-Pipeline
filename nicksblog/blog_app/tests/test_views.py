@@ -14,10 +14,10 @@ def setup_module(module):
     os.environ['BLOGPASSWORD'] = hash
     os.environ['DJANGOKEY'] = 'test_key'
 
-def teardown_module(module):
-    for file in os.listdir('media/'):
-        if file[:9] == 'testimage':
-            os.remove('media/'+file)
+# def teardown_module(module):
+#     for file in os.listdir('media/'):
+#         if file[:9] == 'testimage':
+#             os.remove('media/'+file)
 
 def check_image(image_entry, image_name):
     return str(image_entry)[:10] == image_name and str(image_entry)[-4:] == '.jpg'
@@ -56,8 +56,8 @@ def test_createpost():
     assert check_image(first_image.image,'testimage2')
     assert check_image(last_image.image,'testimage3')
     images = [post.thumbnail, first_image.image, last_image.image]
-    for image in images:
-        assert str(image) in os.listdir('media/')
+    # for image in images:
+    #     assert str(image) in os.listdir('media/')
 
     #testing incorrect password
     response = make_blogpost(rf, password='wrong_password')
@@ -74,9 +74,9 @@ def test_viewpost():
     response = make_blogpost(rf)
     assert BlogPost.objects.all().count() == 1
 
-    request = rf.get('') #???
+    request = rf.get('') 
     view = ViewPost.as_view()
-    response = view(request,pk=1) #???
+    response = view(request,pk=1)
     assert response.status_code == 200
     assert 'test_title' in response.rendered_content
     assert 'test_body' in response.rendered_content

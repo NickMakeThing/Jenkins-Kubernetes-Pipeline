@@ -7,7 +7,7 @@
     <body>
         <header>
             <div id="nav-container"><!--make into link to home page-->
-                <img id="icon" src="{% static 'thinking.svg' %}" />
+                <img id="icon" src="https://nicksblog.s3.ap-southeast-2.amazonaws.com/thinking.svg" />
                 <div>
                      Nicks Cool Blog
                 </div>
@@ -23,7 +23,7 @@
             </div>
             <div id="image-container">
                 {% for image in images %}
-                <img src="{% static image.image %}" class="images" >
+                <img src="https://nicksblog.s3.ap-southeast-2.amazonaws.com/{{ image.image }}" class="images" >
                 {% endfor %}
             </div>
         </div>
