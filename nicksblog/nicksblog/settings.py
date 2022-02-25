@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 #adding this to test jenkins
-print('sdfdfdsfsdfdsfdsfsdfdgdfgdgsAAAAAfdsdsfdsffdsf')
+print('sdfdfFDSDFSDFdsfsdfdsfdsfsdfdgdfgdgsAAAAAfdsdsfdsffdsf')
 from pathlib import Path
 import os 
 
