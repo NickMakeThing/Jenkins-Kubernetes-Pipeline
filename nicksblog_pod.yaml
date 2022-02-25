@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
     - name: nicksblog-container
-      image: nicksegal/devops-nicksblog:latest
+      image: nicksegal/devops-nicksblog:6361ba0a-5c71-46e0-a535-ae7a3a5f00cb
       ports: 
         - name: gunicorn
           containerPort: 8000
