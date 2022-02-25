@@ -6,8 +6,8 @@ ARG BUILD_DEPS="build-base gcc libffi-dev"
 
 ENV DJANGOKEY = fake-key
 ENV BLOGPASSWORD = fake-password
-ENV AWS_ACCESS_KEY_ID = fake-key
-ENV AWS_SECRET_ACCESS_KEY = fake-key
+ENV AWSACCESSKEYID = fake-key
+ENV AWSSECRETACCESSKEY = fake-key
 
 COPY requirements.txt .
 
