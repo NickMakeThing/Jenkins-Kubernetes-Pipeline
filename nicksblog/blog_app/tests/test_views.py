@@ -98,3 +98,4 @@ def test_home():
     assert 'test_title1' in response.rendered_content
     assert 'test_title3' in response.rendered_content
     assert 'testimage1' in response.rendered_content
+    #for demonstration
