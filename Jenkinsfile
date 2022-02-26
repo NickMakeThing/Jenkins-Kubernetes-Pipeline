@@ -22,5 +22,6 @@ node{
         export KUBECONFIG=/home/ubuntu/Downloads/kubeconfig.yaml;
         kubectl set image pod/nicksblog-pod nicksblog-container=nicksegal/devops-nicksblog:$(cat random_string)
         '''
+        sh 'rm -rf *'
     }
 }
