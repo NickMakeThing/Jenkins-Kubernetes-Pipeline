@@ -1,6 +1,7 @@
 node{
     stage("Git Clone"){
-        sh 'git clone https://github.com/NickMakeThing/DevOps-SimpleBlog.git'
+        git changelog: false, poll: false, url: 'https://github.com/NickMakeThing/DevOps-SimpleBlog'
+        sh 'echo gitclone stage'
     }
     stage('Docker build'){
         sh 'cat /proc/sys/kernel/random/uuid > random_string'
